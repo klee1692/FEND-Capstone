@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Travel App</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+</head>
+
+<body>
+
+  <header>
+
+    <div id="navi">
+
+      <h1>
+        Plan Your Next Destination!
+      </h1>
+
+      <div class="city holder">
+        <h3>Where do you want to go? </h3>
+        <input type="text" id="city-to" placeholder="Enter City">
+      </div>
+
+      <div class="date holder">
+        <h4>Departing : </h4>
+        <input type="date" id="date-start" placeholder="Departure Date">
+        <h4>Returning : </h4>
+        <input type="date" id="date-end" placeholder="Returning Date">
+      </div>
+
+      <br>
+      <br>
+      <div id="generate">
+        <button class="buttons" id="go" onclick="return Client.getImage(event)">Let's Go!</button>
+      </div>
+
+    </div>
+
+  </header>
+
+  <span id="printable">
+
+    <section id="travel-card" style="display: none;">
+
+      <div id="trip-title">
+        <p id="trip-name"></p>
+        <div id="countdown"></div>
+      </div>
+
+      <section id="city-image">
+        <img id="pixabay" alt="placeholder" height="169px" width="225px">
+        <div id="city-caption"></div>
+        <button class="buttons" id="showCountryInfo">Country Information</button>
+      </section>
+
+      <section id="forecast">
+        <p id="weather-info">Current Weather at this location:</p>
+        <img id="weather-icon">
+        <div id="temp"></div>
+        <div id="weather"></div>
+        <br>
+        <div id=additional-weather>
+          <div id="apparentTemp"></div>
+          <div id="uv"></div>
+          <div id="aqi"></div>
+        </div>
+      </section>
+
+  </span>
+
+  <div id="travel-buttons">
+    <button id="print" class="buttons" onclick="Client.printDiv()">Print this Trip</button>
+    <button id="back" class="buttons"><a href="#navi">Back to Top</a></button>
+  </div>
+
+  </section>
+
+  <div id=countryInfo style="display: none;"></div>
+
+  <footer>
+    <p>Travel Planner App - A Udacity Capstone project</p>
+  </footer>
+
+  <script>
+    // // Check that service workers are supported
+    // if ('serviceWorker' in navigator) {
+    //     // Use the window load event to keep the page load performant
+    //     window.addEventListener('load', () => {
+    //         navigator.serviceWorker.register('/service-worker.js');
+    //     });
+    // }
+  </script>
+
+</body>
+
+</html>
