@@ -1,0 +1,179 @@
+$font-stack: 'Roboto', sans-serif;
+$textshadow: 1px 1px 1px #606060;
+$boxshadow: 1px 1px 3px #606060 inset;
+
+body{
+    background-image: url(https://cdn.pixabay.com/photo/2020/04/22/20/05/wadi-rum-5079834_1280.jpg);
+    background-repeat: no-repeat;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+html { 
+    scroll-behavior: smooth; 
+}
+
+a{
+    text-decoration: none; 
+    color: #ffffff;
+}
+
+.buttons {
+    display:inline-block;
+    padding:10px 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border:2px solid white;
+    font-weight: bolder;
+    font-size: 16px;
+    color:#ffffff;
+    background-color: #458fde;
+    text-align:center;
+}
+
+.buttons:hover {
+    color: #ffffff;
+    background-color:#125194;
+}
+
+
+header {
+    padding: 100px;
+
+    #navi {
+        font: 100% $font-stack;
+        color: #ffffff;
+        text-shadow: $textshadow;
+        box-shadow: $boxshadow;
+        border: 3px solid #ffffff;
+        width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 30px;
+        display: block;
+        text-align: center;
+        border-radius: 20px;
+
+        h1{
+            margin-bottom: 20px;
+            text-align: top;
+            font-weight: bolder;
+        }
+    
+    }
+    
+}
+
+#travel-card{
+    grid-template-areas:
+    "header header header"
+    "sidebar content buttons";
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 20px;
+    font: 100% $font-stack;
+    background-color: #ebebeb;
+    margin: 100px;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 2px 2px 3px #606060;
+
+    #trip-title{
+    grid-area: header;
+    
+        #trip-name{
+        font-size: 28px;
+        font-weight: bold;
+        margin: 0px;
+        padding-bottom: 10px;
+        }
+
+        #countdown{
+        font-size: 18px;
+        font-weight: light;
+        padding-bottom: 15px;
+        }
+    }
+
+    #city-image{
+        grid-area: sidebar;
+        display: flex;
+        flex-direction: column;
+
+        #city-caption{
+            margin-top: 10px;
+            font-size: 12px;
+        }
+
+        #showCountryInfo{
+            margin-top: auto;
+        }
+
+    }
+    
+    #forecast{
+        grid-area: content;
+        padding-left: 50px;
+
+        #weather-info{
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: -3px;
+        }
+
+        #additional-weather{
+            font-weight: light;
+            font-size: 14px;
+        }
+    }
+    
+    #travel-buttons{
+        grid-area: buttons;
+        margin: -2px 20px 20px 20px;
+
+        .buttons{
+        width: 160px;
+        margin-bottom: 10px;
+        }
+    }
+    
+}
+
+#countryInfo{
+    font: 100% $font-stack;
+    font-size: 18px;
+    padding: 70px;
+    margin: -50px 150px 25px 150px;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border:3px solid black;
+}
+
+footer{
+    padding-top: 100px;
+
+    font: $font-stack;
+    font-size: 10px;
+    color: #000000;
+}
+
+
+
+/* Style for Placeholder Text*/
+::placeholder { /* Firefox, Chrome, Opera */ 
+    color: lightslategray; 
+    font-family: sans-serif;
+
+} 
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */ 
+    color:lightslategray; 
+    font-family: sans-serif;
+
+} 
+  
+::-ms-input-placeholder { /* Microsoft Edge */ 
+    color: lightslategray; 
+    font-family: sans-serif;
+
+} 
