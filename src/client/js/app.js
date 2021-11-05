@@ -5,23 +5,15 @@ function updateUI(res) {
     const returnDate = document.getElementById("date-end").value;
 
     // Set interaction with browser
-    // if (cityTo == "" || departDate == "" || returnDate == "") {
-    //     alert("Please fill your travel info")
-    // } else {
-    //     let targetDiv = document.getElementById("travel-card");
-    //     if (targetDiv.style.display === "none") {
-    //         targetDiv.style.display = "grid";
-    //     } else {
-    //         targetDiv.style.display = "grid";
-    //     };
-    // };
-
-
-    let targetDiv = document.getElementById("travel-card");
-    if (targetDiv.style.display === "none") {
-        targetDiv.style.display = "grid";
+    if (cityTo == "" || departDate == "" || returnDate == "") {
+        alert("Please fill your travel info")
     } else {
-        targetDiv.style.display = "grid";
+        let targetDiv = document.getElementById("travel-card");
+        if (targetDiv.style.display === "none") {
+            targetDiv.style.display = "grid";
+        } else {
+            targetDiv.style.display = "grid";
+        };
     };
 
     document.getElementById("generate").addEventListener("click", setCountdown());
