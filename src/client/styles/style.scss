@@ -2,13 +2,6 @@ $font-stack: 'Roboto', sans-serif;
 $textshadow: 1px 1px 1px #606060;
 $boxshadow: 1px 1px 3px #606060 inset;
 
-body{
-    background-image: url(https://cdn.pixabay.com/photo/2020/04/22/20/05/wadi-rum-5079834_1280.jpg);
-    background-repeat: no-repeat;
-    margin-right: auto;
-    margin-left: auto;
-}
-
 html { 
     scroll-behavior: smooth; 
 }
@@ -21,98 +14,113 @@ a{
 .buttons {
     display:inline-block;
     padding:10px 15px;
-    box-sizing: border-box;
     border-radius: 10px;
-    border:2px solid white;
     font-weight: bolder;
     font-size: 16px;
     color:#ffffff;
-    background-color: #458fde;
+    background-color: #FF784F;
     text-align:center;
+    border: none
 }
 
 .buttons:hover {
     color: #ffffff;
-    background-color:#125194;
+    background-color:#FF9270;
 }
 
 
 header {
-    padding: 100px;
+    text-align: center;
+
+    h1{
+        font: 100% $font-stack;
+        font-weight: bold;
+        font-size: 60px;
+        text-align: left;
+        margin-bottom: -25px;
+        margin-top: 50px;
+        color: #363732;
+    }
+
+    #main{
+        background-image: url(https://cdn.pixabay.com/photo/2020/01/15/20/37/sea-4768869_1280.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 60px;
+        width: auto;
+        height: 375px;
 
     #navi {
         font: 100% $font-stack;
-        color: #ffffff;
-        text-shadow: $textshadow;
-        box-shadow: $boxshadow;
-        border: 3px solid #ffffff;
         width: 450px;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 30px;
-        display: block;
-        text-align: center;
-        border-radius: 20px;
-
-        h1{
-            margin-bottom: 20px;
-            text-align: top;
-            font-weight: bolder;
-        }
-    
+        height: 450px;
+        border-radius: 50%;
+        background-color: #BA92824D;
+        color: #363732;
+        display: flex; 
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
+        margin: auto;
+        font-weight: light;
     }
-    
+    }
 }
 
 #travel-card{
+    display: grid;
     grid-template-areas:
     "header header header"
-    "sidebar content buttons";
-    grid-template-columns: 1fr 3fr 1fr;
+    "image image image"
+    "weather info info"
+    "buttons buttons buttons"
+    ;
+    grid-template-columns: 1fr 3fr 2fr 1 fr;
     gap: 20px;
     font: 100% $font-stack;
-    background-color: #ebebeb;
     margin: 100px;
-    border-radius: 20px;
+    margin-top: 180px;
     padding: 50px;
-    box-shadow: 2px 2px 3px #606060;
+    box-shadow: 2px 2px 10px lightgrey;
+    color: #363732;
 
     #trip-title{
     grid-area: header;
     
         #trip-name{
-        font-size: 28px;
+        font-size: 30px;
         font-weight: bold;
         margin: 0px;
+        padding-top: 20px;
         padding-bottom: 10px;
         }
 
         #countdown{
         font-size: 18px;
-        font-weight: light;
+        padding-top: 10px;
         padding-bottom: 15px;
         }
     }
 
     #city-image{
-        grid-area: sidebar;
+        grid-area: image;
         display: flex;
-        flex-direction: column;
-
-        #city-caption{
-            margin-top: 10px;
-            font-size: 12px;
-        }
-
-        #showCountryInfo{
-            margin-top: auto;
-        }
-
+        flex-direction: row;
+        height: 250px;
+        width: 1080px;
+        margin: auto;
+        gap: 3px;
+        overflow-x: auto;
+        white-space:nowrap;
     }
-    
+
     #forecast{
-        grid-area: content;
-        padding-left: 50px;
+        grid-area: weather;
+        margin: auto;
+        padding: 30px;
+        margin-left: 20px;
 
         #weather-info{
             font-weight: bold;
@@ -126,34 +134,38 @@ header {
         }
     }
     
+    #countryInfo{
+        grid-area: info;
+        font: 100% $font-stack;
+        font-size: 18px;
+        line-height: 150%;
+        text-align: justify;
+        height: fit-content;
+        margin: 30px;
+        padding: 40px;
+        border-radius: 5px;
+    }
+
     #travel-buttons{
         grid-area: buttons;
-        margin: -2px 20px 20px 20px;
+        margin-left: auto;
+        margin-right: 70px;
+        margin-top: -90px;
 
         .buttons{
-        width: 160px;
+        width: 200px;
         margin-bottom: 10px;
         }
     }
     
 }
 
-#countryInfo{
-    font: 100% $font-stack;
-    font-size: 18px;
-    padding: 70px;
-    margin: -50px 150px 25px 150px;
-    background-color: white;
-    box-sizing: border-box;
-    border-radius: 5px;
-    border:3px solid black;
-}
+
 
 footer{
     padding-top: 100px;
-
     font: $font-stack;
-    font-size: 10px;
+    font-size: 12px;
     color: #000000;
 }
 

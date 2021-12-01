@@ -85,7 +85,7 @@ app.post('/getImage', async function (req, res) {
     let query = req.body.searchTerm;
 
     const pixabayKey = process.env.PIXABAY_KEY;
-    const pixabay = await fetch(`https://pixabay.com/api/?key=${pixabayKey}&q=${query}&image_type=photo&per_page=3&orientation=horizontal`);
+    const pixabay = await fetch(`https://pixabay.com/api/?key=${pixabayKey}&q=${query}&image_type=photo&per_page=6&orientation=horizontal`);
 
     try {
         const results = await pixabay.json();
@@ -101,6 +101,18 @@ app.post('/getImage', async function (req, res) {
         {
             imageSm: results.hits[2].previewURL,
             imgMed: results.hits[2].webformatURL
+        },
+        {
+            imageSm: results.hits[3].previewURL,
+            imgMed: results.hits[3].webformatURL
+        },
+        {
+            imageSm: results.hits[4].previewURL,
+            imgMed: results.hits[4].webformatURL
+        },
+        {
+            imageSm: results.hits[5].previewURL,
+            imgMed: results.hits[5].webformatURL
         },
         ];
         res.send(img);

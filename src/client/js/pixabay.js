@@ -30,7 +30,22 @@ async function getImage(event) {
 
 // Add the first image link result to page 
 function addImage(res) {
-    document.getElementById('pixabay').setAttribute("src", res[0].imgMed);
+
+    res.forEach((img, i) => {
+        let imgContainer = document.getElementById("city-image")
+        let imgSlot = document.createElement('img');
+
+        imgSlot.setAttribute("src", img.imgMed)
+        imgContainer.appendChild(imgSlot);
+    });
+
+    // for (let img of res) {
+    //     let imgContainer = document.getElementById("city-image")
+    //     let imgSlot = document.createElement('img');
+    //     imgSlot.setAttribute("src", img[i].imgMed)
+    //     imgContainer.appendChild(imgSlot)
+    // }
+
 }
 
 export { getImage }

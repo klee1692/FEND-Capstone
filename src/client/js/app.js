@@ -8,18 +8,17 @@ function updateUI(res) {
     if (cityTo == "" || departDate == "" || returnDate == "") {
         alert("Please fill your travel info")
     } else {
-        let targetDiv = document.getElementById("travel-card");
+        let targetDiv = document.getElementById("main-functionality");
         if (targetDiv.style.display === "none") {
-            targetDiv.style.display = "grid";
+            targetDiv.style.display = "block";
         } else {
-            targetDiv.style.display = "grid";
+            targetDiv.style.display = "block";
         };
     };
 
     document.getElementById("generate").addEventListener("click", setCountdown());
-    document.getElementById("generate").addEventListener("click", targetDiv.scrollIntoView({ block: "center" }));
-    document.getElementById('trip-name').textContent = `Leaving for ${cityTo} on ${departDate} to ${returnDate}`
-    document.getElementById('city-caption').innerHTML = `${cityTo}, ${res.country}`;
+    document.getElementById("generate").addEventListener("click", document.getElementById("travel-card").scrollIntoView({ block: "center" }));
+    document.getElementById('trip-name').textContent = `Looks like you want to go to ${cityTo} on ${departDate} to ${returnDate}.`
 
     // Filling in weather info
     document.getElementById("weather-icon").setAttribute("src", ` https://www.weatherbit.io/static/img/icons/${res.icon}.png`);
@@ -49,7 +48,7 @@ function setCountdown() {
         let hours = Math.floor((daysTil % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         let end = Math.floor((length / (1000 * 60 * 60 * 24)));
 
-        document.getElementById("countdown").innerHTML = `Get ready to travel in ${days} days and ${hours} hours. Enjoy your ${end} day vacation!`;
+        document.getElementById("countdown").innerHTML = `Trip is coming up in ${days} days and ${hours} hours, get ready for your ${end}-day adventure.`;
 
         if (daysTil < 0) {
             clearInterval(x);
